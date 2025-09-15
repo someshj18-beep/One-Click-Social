@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>One Click Social</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+	<style>
+		html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+		:root{--cream:#FFF8E6;--yellow:#FACC15;--green:#10B981;--red:#EF4444;--ink:#0B0B0B;--ink2:#64748B;--white:#fff}
+		body{background:var(--cream);color:var(--ink)}
+		.container{max-width:1120px;margin:0 auto;padding:24px}
+		.grid{display:grid;gap:16px}
+		.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+		.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+		.card{border-radius:20px;padding:16px;background:var(--white);box-shadow:0 6px 24px rgba(0,0,0,.06)}
+		.card-solid{border-radius:20px;padding:16px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+		.btn{border-radius:14px;padding:10px 14px;font-weight:700;border:2px solid var(--ink);background:var(--white);cursor:pointer}
+		.btn-ink{background:var(--ink);color:var(--white);border-color:var(--ink)}
+		.btn-green{background:var(--green);color:var(--white);border-color:var(--green)}
+		.btn-yellow{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+		.input,select,textarea{border:2px solid var(--ink);border-radius:14px;padding:10px;background:#fff;width:100%}
+		.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+		.row{display:flex;gap:8px;flex-wrap:wrap}
+		.calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.5rem}
+		.day{border-radius:16px;border:2px solid #0B0B0B10;background:#fff;padding:10px;height:110px;font-size:12px;display:flex;flex-direction:column}
+		.kv{color:var(--ink2);font-size:12px}
+		.badge{font-size:11px;border-radius:999px;padding:4px 8px}
+		.badge-green{background:var(--green);color:#fff}
+		.badge-red{background:var(--red);color:#fff}
+		.badge-yellow{background:var(--yellow);color:#000}
+		.hidden{display:none}
+		footer{margin-top:24px;color:var(--ink2);font-size:12px}
+		@media (max-width:900px){.grid-3,.grid-4{grid-template-columns:1fr}}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<h1 style="font-size:22px;font-weight:700">One Click Social</h1>
+			<div class="row">
+				<span id="userBox" class="kv">Not signed in</span>
+				<button id="btnSignIn" class="btn btn-yellow">Sign in with Google</button>
+				<button id="btnSignOut" class="btn hidden">Sign out</button>
+				<button id="btnAddAccountTop" class="btn">Add Account</button>
+				<a href="#create" class="btn btn-ink">New Post</a>
+			</div>
+		</header>
+
+		<section class="grid grid-4" style="margin-bottom:16px">
+			<div class="card-solid" style="background:var(--yellow)"><div class="kv">
